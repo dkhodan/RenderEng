@@ -1,3 +1,1 @@
-﻿  OpenGL.cpp
-c:\users\pc\source\repos\opengl\opengl\opengl.cpp(97): warning C4267: '=': conversion from 'size_t' to 'GLint', possible loss of data
-  OpenGL.vcxproj -> C:\Users\pc\source\repos\OpenGL\x64\Debug\OpenGL.exe
+﻿

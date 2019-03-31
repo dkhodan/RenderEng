@@ -159,7 +159,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GL_Mesh.cpp" />
+    <ClCompile Include="GL_Window.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="OpenGL.cpp" />
+    <ClCompile Include="Shader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GL_Mesh.h" />
+    <ClInclude Include="GL_Window.h" />
+    <ClInclude Include="Shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -4,6 +4,8 @@
 
 #include <GL\glew.h>
 #include <GLFW\glfw3.h>
+#include <algorithm>
+#include <iostream>
 
 class GL_Window
 {
@@ -18,6 +20,9 @@ public:
 	GLint getBufferHeight() { return bufferHeight; }
 
 	bool getShouldClose() { return glfwWindowShouldClose(mainWindow); }
+	bool* getHandleKeys() { return keys; }
+	GLfloat GetXChange();
+	GLfloat GetYChange();
 
 	void swapBuffers() { glfwSwapBuffers(mainWindow); }
 
@@ -28,4 +33,16 @@ private:
 
 	GLint width, height;
 	GLint bufferWidth, bufferHeight;
+	bool keys[1024];
+	GLfloat last_x;
+	GLfloat last_y;
+	GLfloat x_change;
+	GLfloat y_change;
+	bool mouse_first_moved;
+
+
+private:
+	void CreateCallbacks();
+	static void handleKeys(GLFWwindow* window, int key, int code, int action, int mode);
+	static void handleMouse(GLFWwindow* window, double xPox, double yPos);
 };

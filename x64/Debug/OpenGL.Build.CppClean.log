@@ -3,9 +3,11 @@ c:\users\pc\source\repos\opengl\opengl\x64\debug\vc141.idb
 c:\users\pc\source\repos\opengl\opengl\x64\debug\shader.obj
 c:\users\pc\source\repos\opengl\opengl\x64\debug\opengl.obj
 c:\users\pc\source\repos\opengl\opengl\x64\debug\main.obj
-c:\users\pc\source\repos\opengl\opengl\x64\debug\gl_mesh.obj
 c:\users\pc\source\repos\opengl\opengl\x64\debug\gl_window.obj
+c:\users\pc\source\repos\opengl\opengl\x64\debug\gl_mesh.obj
 c:\users\pc\source\repos\opengl\opengl\x64\debug\camera.obj
+c:\users\pc\source\repos\opengl\opengl\x64\debug\light.obj
+c:\users\pc\source\repos\opengl\opengl\x64\debug\material.obj
 c:\users\pc\source\repos\opengl\x64\debug\opengl.exe
 c:\users\pc\source\repos\opengl\x64\debug\opengl.ilk
 c:\users\pc\source\repos\opengl\x64\debug\opengl.pdb

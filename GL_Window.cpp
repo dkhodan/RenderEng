@@ -4,6 +4,9 @@ GL_Window::GL_Window()
 {
 	width = 800;
 	height = 600;
+	x_change = 0.f;
+	y_change = 0.f;
+	mouse_first_moved = true;
 }
 
 GL_Window::GL_Window(GLint windowWidth, GLint windowHeight)

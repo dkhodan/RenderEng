@@ -1,4 +1,5 @@
 #include "Camera.h"
+#include <iostream>
 
 Camera::Camera(glm::vec3 startPosition, glm::vec3 startUp, GLfloat startYaw, GLfloat startPitch, GLfloat startMoveSpeed, GLfloat startTurnSpeed)
 {
@@ -34,22 +35,22 @@ void Camera::keys_control(bool* keys, GLfloat DeltaTime)
 {
 	GLfloat velocity = movement_speed * DeltaTime;
 
-	if (keys[GLFW_KEY_W])
+	if (keys[GLFW_KEY_W] == true)
 	{
 		position += front * velocity;
 	}
 
-	if (keys[GLFW_KEY_S])
+	if (keys[GLFW_KEY_S] == true)
 	{
 		position -= front * velocity;
 	}
 
-	if (keys[GLFW_KEY_A])
+	if (keys[GLFW_KEY_A] == true)
 	{
 		position -= right * velocity;
 	}
 
-	if (keys[GLFW_KEY_D])
+	if (keys[GLFW_KEY_D] == true)
 	{
 		position += right * velocity;
 	}

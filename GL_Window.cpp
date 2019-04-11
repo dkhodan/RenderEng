@@ -13,7 +13,11 @@ GL_Window::GL_Window(GLint windowWidth, GLint windowHeight)
 {
 	width = windowWidth;
 	height = windowHeight;
-	std::for_each(std::begin(keys), std::end(keys), [](auto& key) { return false; });
+
+	for (auto key : keys)
+	{
+		key = 0;
+	}
 }
 
 int GL_Window::Initialise()

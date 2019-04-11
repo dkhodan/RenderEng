@@ -66,30 +66,49 @@ void calc_average_normals(unsigned int * indices, unsigned int indiceCount, GLfl
 
 void CreateObjects()
 {
-	unsigned int indices[] = {
-		0, 3, 1,
-		1, 3, 2,
-		2, 3, 0,
-		0, 1, 2
+	unsigned int indices[] =
+	{
+		//front 
+		0, 3, 4, 
+		4, 5, 0,
+
+		//back
+		1, 2, 7,
+		7, 6, 1,
+
+		//top 
+		1, 0, 3,
+		1, 2, 3,
+
+		//bottom
+		4, 5, 6, 
+		6, 7, 4,
+
+		//left
+		1, 0, 5,
+		1, 6, 5,
+
+		//right
+		2, 3, 4,
+		2, 7, 4
 	};
 
 	GLfloat vertices[] = {
-		//	x      y      z		nx	  ny    nz
-		-1.0f, -1.0f, 0.0f,		0.0f, 0.0f, 0.0f,
-		0.0f, -1.0f, 1.0f,		0.0f, 0.0f, 0.0f,
-		1.0f, -1.0f, 0.0f,		0.0f, 0.0f, 0.0f,
-		0.0f, 1.0f, 0.0f,		0.0f, 0.0f, 0.0f
+		-1.0, 1.0f, -1.0f,		0.0f, 0.0f, 0.0f,  // top right back		0
+		-1.0f, 1.0f, 1.0f,		0.0f, 0.0f, 0.0f,  // top right front		1
+		1.0f, 1.0f, 1.0f,		0.0f, 0.0f, 0.0f,  // bottom right back		2
+		1.0f, 1.0f, -1.0f,		0.0f, 0.0f, 0.0f,  // bottom right front	3
+		1.0f, -1.0f, -1.0f,		0.0f, 0.0f, 0.0f,  // bottom left back		4
+		-1.0f, -1.0f, -1.0f,	0.0f, 0.0f, 0.0f,  // bottom left front		5
+		-1.0f, -1.0f, 1.0f,		0.0f, 0.0f, 0.0f,  // top left back			6
+		1.0f, -1.0f, 1.0f,		0.0f, 0.0f, 0.0f,  // top left front		7
 	};
 
-	calc_average_normals(indices, 12, vertices, 24, 8, 5);
+	calc_average_normals(indices, 36, vertices, 24, 6, 3);
 
 	GL_Mesh *obj1 = new GL_Mesh();
-	obj1->CreateMesh(vertices, indices, 24, 12);
+	obj1->CreateMesh(vertices, indices, 48, 36);
 	meshList.push_back(obj1);
-
-	GL_Mesh *obj2 = new GL_Mesh();
-	obj2->CreateMesh(vertices, indices, 24, 12);
-	meshList.push_back(obj2);
 }
 
 void CreateShaders()
@@ -107,18 +126,18 @@ int main()
 
 	CreateObjects();
 	CreateShaders();
-	camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f, 2.0f, 0.5f);
+	camera = Camera(glm::vec3(0.0f, 3.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), 0.0f, 0.0f, 2.0f, 0.5f);
 
-	shiny_material = Material(1.0f, 32);
+	shiny_material = Material(0.3f, 32);
 	dull_material = Material(0.3f, 4);
 
-	mainLight = Light(0.0f, 1.0f, 1.0f, 0.1f,
-						-3.0f, 3.5f, 0.0f, 0.7f);
+	mainLight = Light(1.0f, 1.0f, 1.0f, 0.1f,
+						0.0f, 0.0f, 0.0f, 1.0f);
 
 
 	GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0, uniformAmbientIntensity = 0, uniformAmbientColour = 0, uniformLightDirection = 0, uniformDiffuseIntensity = 0,
 		uniformSpecularIntensity = 0, uniformShininess = 0, uniformEyePosition = 0;
-	glm::mat4 projection = glm::perspective(45.0f, (GLfloat)mainWindow.getBufferWidth() / mainWindow.getBufferHeight(), 0.1f, 100.0f);
+	glm::mat4 projection = glm::perspective(glm::radians(70.0f), (GLfloat)mainWindow.getBufferWidth() / (GLfloat)mainWindow.getBufferHeight(), 0.01f, 1000.0f);
 
 	// Loop until window closed
 	while (!mainWindow.getShouldClose())
@@ -149,13 +168,12 @@ int main()
 		uniformShininess = shaderList[0].GetShininess();
 
 		mainLight.UseLight(uniformAmbientIntensity, uniformAmbientColour, uniformDiffuseIntensity, uniformLightDirection);
-		//mainLight.UpdateLightLocation(glm::vec3(0.001f, 0.001f, 0.0f));
+		mainLight.UpdateLightLocation();
 
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculate_view_matrix()));
 		glUniform3f(uniformEyePosition, camera.GetCameraPosition().x, camera.GetCameraPosition().y, camera.GetCameraPosition().z);
 		
-
 		glm::mat4 model = glm::mat4(1.f);
 
 		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
@@ -164,17 +182,8 @@ int main()
 		shiny_material.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		meshList[0]->RenderMesh();
 
-		model = glm::mat4(1.f);
-		model = glm::translate(model, glm::vec3(0.0f, 4.0f, -2.5f));
-		//model = glm::scale(model, glm::vec3(0.4f, 0.4f, 1.0f));
-		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
-		shiny_material.UseMaterial(uniformSpecularIntensity, uniformShininess);
-		meshList[1]->RenderMesh();
-
 		glUseProgram(0);
-
 		mainWindow.swapBuffers();
 	}
-
 	return 0;
 }

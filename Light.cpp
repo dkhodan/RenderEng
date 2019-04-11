@@ -11,25 +11,28 @@ Light::Light()
 	diffuse_intensity = 0.0f;
 }
 
-void Light::UpdateLightLocation(glm::vec3 dir)
+void Light::UpdateLightLocation()
 {
-	if (light_direction.x < 4.0f)
+	if (direction)
 	{
-		light_direction.x += dir.x;
+
+		if (angle >= 360.f) 
+		{
+			direction = false;
+			return;
+		}
+		angle += 0.1f;
+		light_direction +=glm::vec3(glm::cos(glm::radians(angle)), glm::sin(glm::radians(angle)), 0.f);
 	}
 	else
 	{
-		light_direction.x = 0;
-	}
-
-
-	if (light_direction.y > -4.0f)
-	{
-		light_direction.y -= dir.y;
-	}
-	else
-	{
-		light_direction.y = 3.0f;
+		if (angle <= 0.1f)
+		{
+			direction = true;
+			return;
+		}
+		angle -= 0.1f;
+		light_direction -= glm::vec3(glm::cos(glm::radians(angle)), glm::sin(glm::radians(angle)), 0.f);
 	}
 }
 

@@ -14,7 +14,7 @@ GL_Window::GL_Window(GLint windowWidth, GLint windowHeight)
 	width = windowWidth;
 	height = windowHeight;
 
-	for (auto key : keys)
+	for (auto &key : keys)
 	{
 		key = 0;
 	}

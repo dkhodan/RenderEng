@@ -1,4 +1,5 @@
 #include "GL_Mesh.h"
+#include <iostream>
 
 GL_Mesh::GL_Mesh()
 {
@@ -65,6 +66,43 @@ void GL_Mesh::ClearMesh()
 	}
 
 	indexCount = 0;
+}
+
+void GL_Mesh::ControlMesh(bool * keys, float DeltaTime)
+{
+	if (keys[GLFW_KEY_LEFT_SHIFT] == true && keys[GLFW_KEY_X] == true && keys[GLFW_KEY_LEFT] == true)
+	{
+		if (mesh_scale.x <= 0.1f)
+			return;
+
+		mesh_scale -= glm::vec3(0.001f, 0.f, 0.f);
+	}
+
+	if (keys[GLFW_KEY_LEFT_SHIFT] == true && keys[GLFW_KEY_X] == true && keys[GLFW_KEY_RIGHT] == true)
+	{
+		mesh_scale += glm::vec3(0.001f, 0.f, 0.f);
+	}
+
+	if (keys[GLFW_KEY_LEFT_SHIFT] == true && keys[GLFW_KEY_C] == true && keys[GLFW_KEY_LEFT] == true)
+	{
+		if (mesh_scale.y <= 0.1f)
+			return;
+
+		mesh_scale -= glm::vec3(0.0f, 0.001f, 0.f);
+	}
+
+	if (keys[GLFW_KEY_LEFT_SHIFT] == true && keys[GLFW_KEY_C] == true && keys[GLFW_KEY_RIGHT] == true)
+	{
+		mesh_scale += glm::vec3(0.0f, 0.001f, 0.f);
+	}
+ }
+
+glm::mat4 GL_Mesh::GetMeshTransformMatrix()
+{
+	mesh_model = glm::mat4(1.f);
+	mesh_model = glm::translate(mesh_model, glm::vec3(1.0f, 1.0f, 1.0f));
+	mesh_model = glm::scale(mesh_model, mesh_scale);
+	return this->mesh_model;
 }
 
 

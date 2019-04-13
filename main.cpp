@@ -129,7 +129,6 @@ int main()
 	camera = Camera(glm::vec3(0.0f, 3.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), 0.0f, 0.0f, 2.0f, 0.5f);
 
 	shiny_material = Material(0.3f, 32);
-	dull_material = Material(0.3f, 4);
 
 	mainLight = Light(1.0f, 1.0f, 1.0f, 0.1f,
 						0.0f, 0.0f, 0.0f, 1.0f);
@@ -138,9 +137,8 @@ int main()
 	GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0, uniformAmbientIntensity = 0, uniformAmbientColour = 0, uniformLightDirection = 0, uniformDiffuseIntensity = 0,
 		uniformSpecularIntensity = 0, uniformShininess = 0, uniformEyePosition = 0;
 	glm::mat4 projection = glm::perspective(glm::radians(70.0f), (GLfloat)mainWindow.getBufferWidth() / (GLfloat)mainWindow.getBufferHeight(), 0.01f, 1000.0f);
-
 	// Loop until window closed
-	while (!mainWindow.getShouldClose())
+ 	while (!mainWindow.getShouldClose())
 	{
 		GLfloat now = glfwGetTime();
 		DeltaTime = now - LastTime;
@@ -173,11 +171,11 @@ int main()
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculate_view_matrix()));
 		glUniform3f(uniformEyePosition, camera.GetCameraPosition().x, camera.GetCameraPosition().y, camera.GetCameraPosition().z);
-		
-		glm::mat4 model = glm::mat4(1.f);
+		meshList[0]->ControlMesh(mainWindow.getHandleKeys(), DeltaTime);
+		glm::mat4 model = meshList[0]->GetMeshTransformMatrix();
 
-		model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
-		//model = glm::scale(model, glm::vec3(0.4f, 0.4f, 1.0f));
+		//model = glm::scale(model, glm::vec3(0.01f, 0.01f, 0.01f));
+
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		shiny_material.UseMaterial(uniformSpecularIntensity, uniformShininess);
 		meshList[0]->RenderMesh();

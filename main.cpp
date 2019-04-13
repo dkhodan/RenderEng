@@ -14,8 +14,13 @@
 #include "GL_Mesh.h"
 #include "Shader.h"
 #include "Camera.h"
-#include "Light.h"
+#include "DirectinalLight.h"
 #include "Material.h"
+
+#define AMBIENT_INTENSITY
+#define DIFFUSE_INTENSITY
+#define RGB
+#define DIRECTION
 
 const float toRadians = 3.14159265f / 180.0f;
 
@@ -23,7 +28,7 @@ GL_Window mainWindow;
 std::vector<GL_Mesh*> meshList;
 std::vector<Shader> shaderList;
 Camera camera;
-Light mainLight;
+DirectinalLight main_light;
 Material shiny_material;
 Material dull_material;
 
@@ -130,12 +135,14 @@ int main()
 
 	shiny_material = Material(0.3f, 32);
 
-	mainLight = Light(1.0f, 1.0f, 1.0f, 0.1f,
-						0.0f, 0.0f, 0.0f, 1.0f);
-
+	main_light = DirectinalLight(RGB 1.0f, 1.0f, 1.0f,
+								AMBIENT_INTENSITY 0.1f, DIFFUSE_INTENSITY 0.3f,
+								DIRECTION 0.f, 0.f, -1.f);
+			
 
 	GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0, uniformAmbientIntensity = 0, uniformAmbientColour = 0, uniformLightDirection = 0, uniformDiffuseIntensity = 0,
 		uniformSpecularIntensity = 0, uniformShininess = 0, uniformEyePosition = 0;
+
 	glm::mat4 projection = glm::perspective(glm::radians(70.0f), (GLfloat)mainWindow.getBufferWidth() / (GLfloat)mainWindow.getBufferHeight(), 0.01f, 1000.0f);
 	// Loop until window closed
  	while (!mainWindow.getShouldClose())
@@ -164,9 +171,8 @@ int main()
 		uniformEyePosition = shaderList[0].GetEyePosition();
 		uniformSpecularIntensity = shaderList[0].GetSpecularIntensity();
 		uniformShininess = shaderList[0].GetShininess();
-
-		mainLight.UseLight(uniformAmbientIntensity, uniformAmbientColour, uniformDiffuseIntensity, uniformLightDirection);
-		mainLight.UpdateLightLocation();
+		main_light.UseLight(uniformAmbientIntensity, uniformAmbientColour, uniformDiffuseIntensity, uniformLightDirection);
+		main_light.UpdateLightLocation();
 
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculate_view_matrix()));

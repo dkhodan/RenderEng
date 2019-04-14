@@ -82,6 +82,11 @@ void Camera::mouse_control(GLfloat xChange, GLfloat yChange)
 	update();
 }
 
+glm::vec3 Camera::GetCameraDirection()
+{
+	return glm::normalize(front);
+}
+
 Camera::~Camera()
 {
 }

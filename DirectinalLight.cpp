@@ -7,8 +7,8 @@ DirectinalLight::DirectinalLight() : Light()
 }
 
 DirectinalLight::DirectinalLight(GLfloat red, GLfloat green, GLfloat blue, 
-								 GLfloat ambient, GLfloat diffuse_intensity,
-								 GLfloat x, GLfloat y, GLfloat z) : Light(red, green, blue, ambient, diffuse_intensity)
+								 GLfloat ambient_intensity, GLfloat diffuse_intensity,
+								 GLfloat x, GLfloat y, GLfloat z) : Light(red, green, blue, ambient_intensity, diffuse_intensity)
 {
 	light_direction = glm::vec3(x, y, z);
 }

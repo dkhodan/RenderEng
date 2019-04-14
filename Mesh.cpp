@@ -1,4 +1,4 @@
-#include "GL_Mesh.h"
+#include "Mesh.h"
 #include <iostream>
 
 GL_Mesh::GL_Mesh()

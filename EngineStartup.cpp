@@ -5,6 +5,7 @@
 
 #include <GL\glew.h>
 #include <GLFW\glfw3.h>
+// 24 nomer - 3 lab
 
 #include <glm\glm.hpp>
 #include <glm\gtc\matrix_transform.hpp>
@@ -82,7 +83,7 @@ void CreateObjects()
 	{
 		//front 
 		0, 3, 4, 
-		4, 5, 0,
+		4, 5, 0, 
 
 		//back
 		1, 2, 7,
@@ -219,8 +220,8 @@ int main()
 
 		shaderList[0].SetDirectionalLight(&main_light);
 		shaderList[0].SetPointLights(point_lights, point_light_count);
-		shaderList[0].SetSpotLights(spot_lights, spot_light_count);
-		//main_light.UpdateLightLocation();
+		//shaderList[0].SetSpotLights(spot_lights, spot_light_count);
+		main_light.UpdateLightLocation();
 
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculate_view_matrix()));

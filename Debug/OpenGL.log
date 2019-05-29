@@ -1,12 +1,112 @@
-﻿OpenGL.obj : error LNK2019: unresolved external symbol _glfwInit referenced in function _main
-OpenGL.obj : error LNK2019: unresolved external symbol _glfwTerminate referenced in function _main
-OpenGL.obj : error LNK2019: unresolved external symbol _glfwWindowHint referenced in function _main
-OpenGL.obj : error LNK2019: unresolved external symbol _glfwCreateWindow referenced in function _main
-OpenGL.obj : error LNK2019: unresolved external symbol _glfwDestroyWindow referenced in function _main
-OpenGL.obj : error LNK2019: unresolved external symbol _glfwWindowShouldClose referenced in function _main
-OpenGL.obj : error LNK2019: unresolved external symbol _glfwGetFramebufferSize referenced in function _main
-OpenGL.obj : error LNK2019: unresolved external symbol _glfwPollEvents referenced in function _main
-OpenGL.obj : error LNK2019: unresolved external symbol _glfwMakeContextCurrent referenced in function _main
-OpenGL.obj : error LNK2019: unresolved external symbol _glfwSwapBuffers referenced in function _main
+﻿  Camera.cpp
+  DirectinalLight.cpp
+c:\users\pc\source\repos\opengl\opengl\light.h(20): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\pc\source\repos\opengl\opengl\directinallight.cpp(18): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\directinallight.cpp(19): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\directinallight.cpp(20): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\directinallight.cpp(21): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+  Mesh.cpp
+  SpotLight.cpp
+c:\users\pc\source\repos\opengl\opengl\light.h(20): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\pc\source\repos\opengl\opengl\spotlight.cpp(35): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\spotlight.cpp(36): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\spotlight.cpp(37): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\spotlight.cpp(39): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\spotlight.cpp(40): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\spotlight.cpp(41): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\spotlight.cpp(42): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+  Window.cpp
+c:\users\pc\source\repos\opengl\opengl\window.cpp(109): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\window.cpp(110): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\window.cpp(114): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\window.cpp(115): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\window.cpp(117): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\window.cpp(118): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+  Light.cpp
+c:\users\pc\source\repos\opengl\opengl\light.h(20): warning C4305: 'initializing': truncation from 'double' to 'float'
+  EngineStartup.cpp
+c:\users\pc\source\repos\opengl\opengl\enginestartup.cpp(279): warning C4101: 'k': unreferenced local variable
+c:\users\pc\source\repos\opengl\opengl\enginestartup.cpp(320): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Material.cpp
+c:\users\pc\source\repos\opengl\opengl\material.cpp(12): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\material.cpp(13): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+  PointLight.cpp
+c:\users\pc\source\repos\opengl\opengl\light.h(20): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\pc\source\repos\opengl\opengl\pointlight.cpp(30): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\pointlight.cpp(31): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\pointlight.cpp(32): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\pointlight.cpp(34): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\pointlight.cpp(35): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\pointlight.cpp(36): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\pointlight.cpp(37): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+  Shader.cpp
+c:\users\pc\source\repos\opengl\opengl\light.h(20): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\pc\source\repos\opengl\opengl\shader.cpp(175): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\shader.cpp(174): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\shader.cpp(173): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\shader.cpp(172): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\shader.cpp(188): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\shader.cpp(187): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\shader.cpp(186): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\shader.cpp(202): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\shader.cpp(201): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+c:\users\pc\source\repos\opengl\opengl\shader.cpp(200): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+  Generating Code...
+c:\users\pc\source\repos\opengl\opengl\window.cpp(77): warning C4715: 'GL_Window::Initialise': not all control paths return a value
+DirectinalLight.obj : error LNK2001: unresolved external symbol __imp____glewUniform1f
+SpotLight.obj : error LNK2001: unresolved external symbol __imp____glewUniform1f
+Material.obj : error LNK2001: unresolved external symbol __imp____glewUniform1f
+PointLight.obj : error LNK2001: unresolved external symbol __imp____glewUniform1f
+DirectinalLight.obj : error LNK2001: unresolved external symbol __imp____glewUniform3f
+SpotLight.obj : error LNK2001: unresolved external symbol __imp____glewUniform3f
+EngineStartup.obj : error LNK2001: unresolved external symbol __imp____glewUniform3f
+PointLight.obj : error LNK2001: unresolved external symbol __imp____glewUniform3f
+Mesh.obj : error LNK2001: unresolved external symbol __imp____glewBindBuffer
+Mesh.obj : error LNK2001: unresolved external symbol __imp____glewBufferData
+Mesh.obj : error LNK2001: unresolved external symbol __imp____glewDeleteBuffers
+Mesh.obj : error LNK2001: unresolved external symbol __imp____glewGenBuffers
+Mesh.obj : error LNK2001: unresolved external symbol __imp____glewEnableVertexAttribArray
+Mesh.obj : error LNK2001: unresolved external symbol __imp____glewVertexAttribPointer
+Mesh.obj : error LNK2001: unresolved external symbol __imp____glewBindVertexArray
+Mesh.obj : error LNK2001: unresolved external symbol __imp____glewDeleteVertexArrays
+Mesh.obj : error LNK2001: unresolved external symbol __imp____glewGenVertexArrays
+Window.obj : error LNK2019: unresolved external symbol __imp__glewInit@0 referenced in function "public: int __thiscall GL_Window::Initialise(void)" (?Initialise@GL_Window@@QAEHXZ)
+Window.obj : error LNK2019: unresolved external symbol __imp__glewGetErrorString@4 referenced in function "public: int __thiscall GL_Window::Initialise(void)" (?Initialise@GL_Window@@QAEHXZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwInit referenced in function "public: int __thiscall GL_Window::Initialise(void)" (?Initialise@GL_Window@@QAEHXZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwTerminate referenced in function "public: __thiscall GL_Window::~GL_Window(void)" (??1GL_Window@@QAE@XZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwWindowHint referenced in function "public: int __thiscall GL_Window::Initialise(void)" (?Initialise@GL_Window@@QAEHXZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwCreateWindow referenced in function "public: int __thiscall GL_Window::Initialise(void)" (?Initialise@GL_Window@@QAEHXZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwDestroyWindow referenced in function "public: __thiscall GL_Window::~GL_Window(void)" (??1GL_Window@@QAE@XZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwSetWindowShouldClose referenced in function "private: static void __cdecl GL_Window::handleKeys(struct GLFWwindow *,int,int,int,int)" (?handleKeys@GL_Window@@CAXPAUGLFWwindow@@HHHH@Z)
+Window.obj : error LNK2019: unresolved external symbol _glfwGetFramebufferSize referenced in function "public: int __thiscall GL_Window::Initialise(void)" (?Initialise@GL_Window@@QAEHXZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwSetWindowUserPointer referenced in function "public: int __thiscall GL_Window::Initialise(void)" (?Initialise@GL_Window@@QAEHXZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwGetWindowUserPointer referenced in function "private: static void __cdecl GL_Window::handleKeys(struct GLFWwindow *,int,int,int,int)" (?handleKeys@GL_Window@@CAXPAUGLFWwindow@@HHHH@Z)
+Window.obj : error LNK2019: unresolved external symbol _glfwSetInputMode referenced in function "public: int __thiscall GL_Window::Initialise(void)" (?Initialise@GL_Window@@QAEHXZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwSetKeyCallback referenced in function "private: void __thiscall GL_Window::CreateCallbacks(void)" (?CreateCallbacks@GL_Window@@AAEXXZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwSetCursorPosCallback referenced in function "private: void __thiscall GL_Window::CreateCallbacks(void)" (?CreateCallbacks@GL_Window@@AAEXXZ)
+Window.obj : error LNK2019: unresolved external symbol _glfwMakeContextCurrent referenced in function "public: int __thiscall GL_Window::Initialise(void)" (?Initialise@GL_Window@@QAEHXZ)
+Window.obj : error LNK2001: unresolved external symbol __imp__glewExperimental
+EngineStartup.obj : error LNK2019: unresolved external symbol _glfwWindowShouldClose referenced in function "public: bool __thiscall GL_Window::getShouldClose(void)" (?getShouldClose@GL_Window@@QAE_NXZ)
+EngineStartup.obj : error LNK2019: unresolved external symbol _glfwPollEvents referenced in function "int __cdecl main_01(void)" (?main_01@@YAHXZ)
+EngineStartup.obj : error LNK2019: unresolved external symbol _glfwGetTime referenced in function "int __cdecl main_01(void)" (?main_01@@YAHXZ)
+EngineStartup.obj : error LNK2019: unresolved external symbol _glfwSwapBuffers referenced in function "public: void __thiscall GL_Window::swapBuffers(void)" (?swapBuffers@GL_Window@@QAEXXZ)
+EngineStartup.obj : error LNK2001: unresolved external symbol __imp____glewUniformMatrix4fv
+EngineStartup.obj : error LNK2001: unresolved external symbol __imp____glewUseProgram
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewUseProgram
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewAttachShader
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewCompileShader
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewCreateProgram
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewCreateShader
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewDeleteProgram
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewGetProgramInfoLog
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewGetProgramiv
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewGetShaderInfoLog
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewGetShaderiv
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewGetUniformLocation
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewLinkProgram
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewShaderSource
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewUniform1i
+Shader.obj : error LNK2001: unresolved external symbol __imp____glewValidateProgram
 C:\graphic\opengl\glfw\lib-vc2015\glfw3.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
-C:\Users\pc\source\repos\OpenGL\Debug\OpenGL.exe : fatal error LNK1120: 10 unresolved externals
+C:\graphic\opengl\glew\lib\Release\x64\glew32.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\pc\source\repos\OpenGL\Debug\OpenGL.exe : fatal error LNK1120: 47 unresolved externals
